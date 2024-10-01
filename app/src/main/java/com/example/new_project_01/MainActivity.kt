@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnChangeText: Button
+    private lateinit var btnChangeColor: Button
     private lateinit var textMain: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnChangeText = findViewById(R.id.btnChangeText)
+        btnChangeColor = findViewById(R.id.btnChangeColor)
         textMain = findViewById(R.id.textMain)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -31,5 +33,8 @@ class MainActivity : AppCompatActivity() {
             textMain.text = "Hello"
         }
 
+        btnChangeColor.setOnClickListener {
+            textMain.setTextColor(Color.RED)
+        }
     }
 }
